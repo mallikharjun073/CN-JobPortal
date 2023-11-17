@@ -1,0 +1,49 @@
+<section class="py-5">
+    <div class="container px-5 mb-5">
+        <div class="text-center mb-5">
+            <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Jobs</span></h1>
+        </div>
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-11 col-xl-9 col-xxl-8">
+                
+                
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">Name</th>
+                          <th scope="col">Email</th>
+                          <th scope="col">Contact</th>
+                          <th scope="col">Resume</th>
+                          <th scope="col">action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <% var itemId = 0;
+                         applicant.applicants.forEach((item)=>{ %>
+                            <tr>
+                            <th scope="row"><%= ++itemId %></th>
+                            <td><%= item.name %></td>
+                            <td><%= item.email %></td>
+                            <td><%= item.contact %></td>
+                            <td><a href="/uploads/<%= item.resumePath %>"><%= item.resumePath %></a></td>
+                            <td>
+                                <form action="/jobs/<%=applicant.id%>/applicants/<%=item.applicantid%>">
+                                    <button type="submit" class="btn btn-warning">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </button>
+                                </form>
+                                <form action="/jobs/<%=applicant.id%>/applicants/<%=item.applicantid%>?_method=DELETE" method="post">
+                                    <button type="submit" class="btn btn-danger">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </form>
+                            </td>
+                            </tr>
+                        <% }) %>
+                      </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

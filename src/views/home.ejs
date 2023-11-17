@@ -1,0 +1,87 @@
+            <!-- Header-->
+            <header class="py-5">
+                <div class="container px-5 pb-5">
+                    <div class="row gx-5 align-items-center">
+                        <div class="col-xxl-5">
+                            <!-- Header text content-->
+                            <div class="text-center text-xxl-start">
+                               
+                                <div class="fs-3 fw-light text-muted">A comprehensive platform for reliable</div>
+                                <h1 class="display-3 fw-bolder mb-5"><span class="text-gradient d-inline">job opportunities and internships.</span></h1>
+                                <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
+                                    <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="/jobs">Search Job</a>
+                                    <a class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Hire talent</a>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </header>
+        </main>
+
+<!-- Button trigger modal -->
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Experience easily!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <form action="/register" method="post">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Name</span>
+                <input type="text"  name = "name" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Email</span>
+                <input type="email" name = "email" class="form-control" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Password</span>
+                <input type="password" name="password" class="form-control" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+              <input type="submit" class="btn btn-secondary text-white" value="Register">
+          </form>
+        </div>
+        <div class="modal-footer d-block">
+          <span class="float-start">Already registered?</span>
+          <button class="btn btn-outline-success px-3 py-2" data-bs-toggle="modal" data-bs-target="#loginModal">log in</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Button trigger modal -->
+
+  <!-- Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Experience easily!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form action="/login" method="post">
+                
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Email</span>
+                    <input type="email" name = "email" class = "form-control" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1">
+                  </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Password</span>
+                    <input type="password" name = "password" class="form-control" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
+                  </div>
+                  <input type="submit" class="btn btn-secondary text-white" value="Log in">
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary text-white" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>

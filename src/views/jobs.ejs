@@ -1,0 +1,53 @@
+<section class="py-5">
+    <div class="container px-5 mb-5">
+        <div class="text-center mb-5">
+            <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Jobs</span></h1>
+        </div>
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-11 col-xl-9 col-xxl-8">
+                
+                <% list.forEach(function(job){ %>
+                    <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
+                        <div class="card-body p-0">
+                            <div class="align-items-center">
+                                <div class="p-5">
+                                    <h5 class="card-title fw-bold"><%= job.companyname %></h5>
+                                    <h6 class="fw-bold"><%= job.jobdesignation %></h6>
+                                    
+                                    <p class="card-text fw-bold"><%=job.salary %></p>
+
+                                    <% 
+                                    var colorsArray = {
+                                    'React' : 'bg-primary',
+                                    'NodeJs' : 'bg-success',
+                                    'Angular' : 'bg-danger',
+                                    'MongoDB' : 'bg-warning text-dark',
+                                    'SQL' : 'bg-info text-dark',
+                                    'Express' : 'bg-light text-dark',
+                                    'Java' : 'bg-dark',
+                                    'SpringBoot' : 'bg-secondary',
+                                    'C++' : 'bg-danger',
+                                    'Data Structures & Algo' : 'bg-success'
+                                    }
+                                    job.skillsrequired.forEach(function(skill){ %>
+                                        <span class="badge rounded-pill <%= colorsArray[skill] %> "><%=skill %></span>
+                                    <% }) %>
+                                
+                                    <div class="d-block d-md-flex justify-content-md-between mt-4">
+                                        <p class="card-text"><small class="text-muted"> Location :  <%=job.location %></small></p>
+                                        <p class="card-text"><small class="text-muted"> Job Posted : <%=job.jobposted %></small></p>
+                                        <p class="card-text"><small class="text-muted"> Last Date to Apply :  <%=job.applyby %></small></p>
+                                    </div>
+                                    <a href="/jobs/<%= job.id %>" class="btn btn-primary float-end">View Details</a>
+                                </div>
+                                 
+                            </div>
+                            
+                        </div>
+                    </div>
+                <% }) %> 
+
+            </div>
+        </div>
+    </div>
+</section>
